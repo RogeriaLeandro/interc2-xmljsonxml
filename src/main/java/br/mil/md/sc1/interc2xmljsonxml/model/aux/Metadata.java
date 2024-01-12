@@ -2,7 +2,8 @@ package br.mil.md.sc1.interc2xmljsonxml.model.aux;
 
 import lombok.*;
 
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.*;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -10,18 +11,20 @@ import javax.xml.bind.annotation.XmlAttribute;
 @Builder
 @Getter
 @Setter
+@XmlRootElement(name = "Metadata")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Metadata {
 
-    @XmlAttribute(name = "Classification")
+    @XmlElement(name = "Classification")
     private Classification classification;
 
-    @XmlAttribute(name = "ReportingDatetime")
-    private String reportingDatetime;
+    @XmlElement(name = "ReportingDatetime")
+    private Date reportingDatetime;
 
-    @XmlAttribute(name = "EffectiveDatetimeStart")
-    private String effectiveDatetimeStart;
+    @XmlElement(name = "EffectiveDatetimeStart")
+    private Date effectiveDatetimeStart;
 
-    @XmlAttribute(name = "EffectiveDatetimeEnd")
-    private String effectiveDatetimeEnd;
+    @XmlElement(name = "EffectiveDatetimeEnd")
+    private Date effectiveDatetimeEnd;
 
 }
